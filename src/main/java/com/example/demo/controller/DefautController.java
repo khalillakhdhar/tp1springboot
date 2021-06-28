@@ -29,9 +29,11 @@ return d.toString();
 
 }
 @PostMapping("device")
-public String adddevice(@RequestParam String name,int id)
+public String adddevice(@RequestParam String name,int id,String description,int price)
 {
-return "le nom de votre device est: "+name+" et le id: "+id;	
+	Device dv=new Device(id, name, description, price);
+	return dv.toString();
+//return "le nom de votre device est: "+name+" et le id: "+id;	
 }
 @GetMapping("input")
 public String getInputs()
