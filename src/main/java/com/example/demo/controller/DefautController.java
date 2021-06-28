@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,6 +27,11 @@ Device d=new Device(1, "toshiba", "toshiba satelite i7", 1800);
 
 return d.toString();
 
+}
+@PostMapping("device")
+public String adddevice(@RequestParam String name)
+{
+return "le nom de votre device est: "+name;	
 }
 @GetMapping("input")
 public String getInputs()
